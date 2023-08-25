@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: rgb(222, 95, 95);
+    font-family: "roboto", sans-serif;
+    font-size: 1.3rem;
+
+}
+
+.landing-page {
+    display: flex;
+    justify-content: center;
+    flex-wrap: warp;
+}
+
+.picture-section {
+    width: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: warp;
+}
+
+.card:nth-child(1) {
+    animation: fadedown 1.5s ease-in-out forwards;
+}
+
+.card:nth-child(2) {
+    animation: fadedown 1.5s ease-in-out 0.5s forwards;
+}
+
+.card:nth-child(3) {
+    animation: fadedown 1.5s ease-in-out 0.2s forwards;
+}
+
+.card {
+    opacity: 0;
+    width: 250px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: white;
+    overflow: hidden;
+}
+
+.card-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.next {
+    opacity: 0;
+    position: relative;
+    margin-top: 20px;
+    width: 60px;
+    height: 60px;
+    background: rgb(50, 49, 49);
+    border-radius: 50%;
+    cursor: pointer;
+    animation: popup 0.8s ease-in-out forwards 3s;
+}
+
+.next:hover {
+    scale: 1.1;
+    transition: all 0.3 ease-in-out;
+}
+
+.text-section {
+    padding: 20px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: right; */
+    width: 40%;
+    min-height: 100vh;
+    animation: slidein 1.5s ease-in-out forwards 1s;
+}
+
+@media (max-width: 768px) {
+    .picture-section {
+        width: 100%;
+    }
+
+    .text-section {
+        width: 100%;
+    }
+}
+
+@keyframes fadedown {
+    from {
+        opacity: 0;
+        transform: translate(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(var(--translation-y));
+    }
+}
+
+@keyframes slidein {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(400px);
+    }
+}
+
+@keyframes popup {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        text-replace: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        text-replace: scale(1);
+    }
+}
